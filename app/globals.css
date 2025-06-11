@@ -1,1 +1,8 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&display=swap");
+
+
+.font-ausphoraDesc {
+  /* font-family: 'Savate', sans-serif; */
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+}
