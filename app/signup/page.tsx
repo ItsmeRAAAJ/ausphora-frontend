@@ -10,6 +10,8 @@ import axios from "axios";
 import { BACKEND_URL } from "../config";
 import { useRouter } from "next/navigation";
 import { toast, Toaster } from 'react-hot-toast';
+import GoogleBtn from "@/components/buttons/GoogleBtn";
+import GithubBtn from "@/components/buttons/GithubBtn";
 
 export default function SignupPage() {
     const [showOtpInput, setShowOtpInput] = useState(false);
@@ -84,7 +86,7 @@ export default function SignupPage() {
                 </Link>
             </div>
 
-            <div className="mt-20">
+            <div className="mt-8">
                 <div className="mb-5">
                     <h1 className="cursor-pointer tracking-tighter text-xl md:text-3xl text-center font-bold my-1 sm:my-2">
                         <span className="font-extrabold text-4xl text-blue-600 bg-clip-text">
@@ -145,6 +147,19 @@ export default function SignupPage() {
                                     disabled={loading}
                                 />
                             </div>
+
+                            <div className="flex justify-center mt-10 items-center">
+                                <div className="flex justify-center items-center w-full cursor-default max-w-sm">
+                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-blue-600 to-transparent"></div>
+                                    <span className="px-4 text-sm font-medium text-black">OR CONTINUE WITH</span>
+                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-blue-600 to-transparent"></div>
+                                </div>
+                            </div>
+
+                            <div className="mt-5 flex justify-center flex-col md:flex-row items-center gap-5">
+                                <GoogleBtn text="Continue with Google" />
+                                <GithubBtn text="Continue with Github" />
+                            </div>
                         </div>
                     </div>
                 ) : (
@@ -173,7 +188,7 @@ export default function SignupPage() {
                 )}
 
                 {!showOtpInput && (
-                    <p className="text-black font-bold text-center mt-6">
+                    <p className="text-black mb-10 font-bold text-center mt-6">
                         Already have an account?{" "}
                         <Link href={"/signin"}>
                             <span className="text-blue-700 font-extrabold cursor-pointer hover:underline">
